@@ -1,0 +1,30 @@
+citit = True
+lista =[]
+sumimp=0
+nr_max_cresc = 0
+nr_num_citite = 1
+numar1=0
+while citit:
+    numar = int(input("Introdu un numar. 0 va termina seria de numere citite:"))
+    if numar!=0:
+        lista.append(numar)
+    else:
+        citit = False
+
+    if numar%2!=0:
+        sumimp = sumimp + numar;
+
+    if (numar1 != 0):
+        if numar > numar1:
+            nr_num_citite = nr_num_citite + 1
+        else:
+            nr_num_citite = 1
+
+    numar1 = numar
+    if nr_num_citite>nr_max_cresc:
+        nr_max_cresc=nr_num_citite
+
+print(lista)
+print(max(lista))
+print("Suma numarelor impare este " + str(sumimp))
+print("Numarul maxim de cifre citite consecutiv crescator este: " + str(nr_max_cresc))
