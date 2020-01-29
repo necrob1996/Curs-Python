@@ -1,0 +1,39 @@
+#Introducerea si initializarea variabilelor
+numar = int(input("Introdu un numar:"))
+numarin = numar
+lista = []
+suma  = 0
+par = 0
+impar = 0
+sumpar = 0
+sumimpar = 0
+palindrom = 0
+
+#Formarea vectorului
+while int(numar/10) != 0 or numar%10 > 0:
+    lista.append(numar%10)
+    numar = int(numar/10)
+print(lista)
+
+#Rezolvarea cerintelor
+for nr in range(len(lista)):
+    suma = suma + lista[nr]
+    if lista[nr] % 2 == 0:
+        par = par + 1
+        sumpar = sumpar + lista[nr]
+    else:
+        impar = impar + 1
+        sumimpar = sumimpar + lista[nr]
+    palindrom = palindrom*10 + lista[nr]
+
+print("Suma cifrelor numarului este "+str(suma))
+if impar == 0 :
+    print("Toate cifrele sunt pare")
+print("Numarul cifrelor pare este "+str(par))
+print("Numarul cifrelor impare este "+str(impar))
+print("suma cifrelor pare este " + str(sumpar))
+print("suma cifrelor impare este " + str(sumimpar))
+if palindrom == numarin:
+    print("Numarul este palindrom")
+else:
+    print("Numarul nu este palindrom")
