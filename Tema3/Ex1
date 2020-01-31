@@ -1,0 +1,21 @@
+class math():
+    firstParameter={}
+    secondParameter={}
+    def multiplay(self):
+        return self.firstParameter*self.secondParameter
+    def sum(self):
+        return self.firstParameter+self.secondParameter
+    def reduction(self):
+        return self.firstParameter-self.secondParameter
+    def division(self):
+        if self.secondParameter != 0:
+            return self.firstParameter/self.secondParameter
+        else:
+            print("Al doilea numar trebuie sa fie diferit de 0")
+instance = math()
+instance.firstParameter= int(input("Introdu primul numar: "))
+instance.secondParameter= int(input("Introdu al doilea numar: "))
+print(instance.multiplay())
+print(instance.sum())
+print(instance.reduction())
+print(instance.division())
