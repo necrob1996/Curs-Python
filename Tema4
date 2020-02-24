@@ -1,0 +1,44 @@
+# Create base class:
+class OpenFile():
+    file = ""
+    def __init__(self,_fileName):
+        self.fileName=_fileName
+
+    def openfile(self):
+        self.file = open(self.fileName)
+
+    def closefile(self):
+        self.file.close()
+
+#Create derived class responsible for writing:
+class WriteFile(OpenFile):
+    ListOfLists = [["mar","para","pruna"],["Brasov","Timisoara","Galati"],["randunica","porumbel","potarniche"]]
+
+    def openfile(self):
+        self.file = open(self.fileName,"w")
+
+    def write(self):
+        for item1 in self.ListOfLists:
+            for item2 in item1:
+                self.file.write(item2 + " ")
+            self.file.write("\n")
+    pass
+
+#Create derived class responsible for reading:
+class ReadFile(OpenFile):
+    List=[]
+    def read(self):
+        for line in self.file:
+            self.List.append(line)
+        pass
+
+instance = WriteFile("Note.txt")
+instance.openfile()
+instance.write()
+instance.closefile()
+
+instanceRead = ReadFile("Note.txt")
+instanceRead.openfile()
+instanceRead.read()
+print(instanceRead.List)
+instanceRead.closefile()
